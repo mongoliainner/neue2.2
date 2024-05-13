@@ -22,23 +22,23 @@ function setup() {
   
  
   //buffer canvas
-  cnv = createGraphics(w,h);
-   //video input setup
-   video = createCapture(VIDEO);
-   video.size(640, 480);
-   video.hide();
+    //cnv = createGraphics(w,h);
+   
+  //video input setup
+  video = createCapture(VIDEO);
+  video.size(320, 240);
+  video.hide();
  
 }
 
 function draw() {
-  image(video,0,0);
+  push();
+  translate(sin(frameCount*0.5), frameCount*0.5);
+  image(video,mouseX,mouseY);
+  
+  pop();
   noStroke();
   fill(theTextColour);
   textSize(theTextSize);
   text(theText, mouseX, mouseY);
-  
 }
-
-
-
-

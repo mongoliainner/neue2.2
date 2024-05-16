@@ -32,10 +32,10 @@ function setup() {
 }
 
 function draw() {
+  const r = 500;
   push();
-  translate(sin(frameCount*0.5), frameCount*0.5);
+  translate(r*sin(frameCount*0.05), r*cos(frameCount*0.05));
   image(video,mouseX,mouseY);
-  
   pop();
   noStroke();
   fill(theTextColour);
